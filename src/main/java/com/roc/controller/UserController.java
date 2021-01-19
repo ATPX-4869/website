@@ -3,6 +3,7 @@ package com.roc.controller;
 
 import com.roc.common.R;
 import com.roc.entity.User;
+import com.roc.exception.MyException;
 import com.roc.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +33,7 @@ public class UserController {
     }
 
     @GetMapping("/getUser")
-    public R getUser(Long id){
+    public R getUser(Long id) throws MyException {
         int a=1/0;
         return R.ok(userService.getById(id));
     }
