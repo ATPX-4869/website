@@ -1,15 +1,13 @@
 package com.roc.controller;
 
 
+import com.roc.common.R;
 import com.roc.entity.User;
 import com.roc.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -29,8 +27,14 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/register")
-    public boolean register(User user){
-        return userService.save(user);
+    public R register(User user){
+        return R.ok(userService.save(user));
+    }
+
+    @GetMapping("/getUser")
+    public R getUser(Long id){
+        int a=1/0;
+        return R.ok(userService.getById(id));
     }
 
 }
