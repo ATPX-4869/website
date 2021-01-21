@@ -13,3 +13,12 @@ spring:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+#日志配置
+logging:
+  level:
+    root: info
+    com.roc: debug
+  file:
+    name: log/website.log
